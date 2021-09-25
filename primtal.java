@@ -14,7 +14,6 @@ public class primtal {
         if (prime(num) == true){
             System.out.println("Det är ett primtal");
         }
-        
         else{
             System.out.println("Det är inte ett primtal");
         }
