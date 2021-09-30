@@ -17,8 +17,6 @@ public class primtal {
         else{
             System.out.println("It is not a prime");
         }
-        
-        
     }
     
     public static boolean prime(int num){
