@@ -1,22 +1,18 @@
 def prime(num):
-    # make a list up to num
-    numList = [x for x in range(num)]
-    # loop through all number up to the input to see if any of them equal the input
-    for i in range(1, num-1):
-        for n in range(1, num - 1):
-            if i * numList[n] == num:
-                # if 2 numbers multiply to input, then its not a prime
-                return False
-    # 1 is an exception
-    if num == 1:
-        return True
+    #if num has a divisor other than 1 and itself; it is not prime
+    for i in range(2, num-1):
+        if num % i == 0:
+            return False
+        
+    #all numbers below 2 (including negativ numbers) can not be prime
+    if num <= 1:
+        return False
     
+    #if both statements fail; it is prime
     return True
 
-
 if __name__ == '__main__':
-    num = int(input("Ange ett heltal: "))
-    # if main(num) returns True; it is prime, otherwise it is not.
+    num = int(input("Ange ett heltal: "))   #get ui and see if it is prime or not
     if prime(num):
         print(num, "är ett primtal")
     else:
