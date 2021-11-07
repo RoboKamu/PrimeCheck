@@ -11,7 +11,9 @@ public class Primtal2 {
         System.out.println("Ange ett heltal: ");
         int num = input.nextInt();
         
+        //call the METHOD prime (an object is an instace of a class, a method is what the object can performe, an action)
         boolean prime = prime(num);
+        
         //if the method returns false; it is not prime, otherwise it's prime
         if (prime == true) {
             System.out.println(num + " är ett primtal");
