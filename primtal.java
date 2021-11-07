@@ -1,40 +1,46 @@
 import java.util.Scanner;
 
-public class primtal {
+public class Primtal2 {
+    
     public static void main(String[] args) {
+        
+        //setup scanner
         Scanner input = new Scanner(System.in);
-        //ask for input
-        System.out.println("Enter an integer: ");
+        
+        //get input from user
+        System.out.println("Ange ett heltal: ");
         int num = input.nextInt();
         
-        //call the object prime to start the sequence, and see if input is prime
-        int prime = prime(num);
-        
-        //see if the returned value is True or False
-        if (prime == true){
-            System.out.println("It is a prime");
-        }
-        else{
-            System.out.println("It is not a prime");
+        boolean prime = prime(num);
+        //if the method returns false; it is not prime, otherwise it's prime
+        if (prime == true) {
+            System.out.println(num + " är ett primtal");
+        } else {
+            System.out.println(num + " är inte ett primtal");
         }
     }
     
     public static boolean prime(int num){
-        //make an list from 0 up to num
-        int[] numList = new int[num];
-        for (int z = 0; z <= num-1; z++){
-            numList[z] = z;
+        
+        /*
+        See if there is a divisor of the integer num.
+        To do this we will loop through all the numbers between 1 and num, and 
+        divide num with the numbers to see if they have a remainder.
+        If they do; then num is a composite number and not prime.
+        */
+        
+        for (int m = 2; (num - 1) > m; m++) {
+            if (num % m == 0) {
+                return false;
+            }
         }
         
-        //loop through all numbers up to num, and calculate which 2 multiply together
-        for (int i = 1; i <= num-1; i++){
-            for (int n = 1; n <= num-1; n++){
-                if (i*numList[n] == num){
-                    //2 numbers that are not 1 or num, multiply to num
-                    return false;
-                }
-            }            
+        //all numbers that are less or equal to 1 cannot be prime
+        if (num <= 1){
+            return false;
         }
-        return true;
+        
+        //if both of these statements fail; it is prime
+        return true;  
     }
 }
