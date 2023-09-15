@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Primtal2 {
+public class Primtal {
     
     public static void main(String[] args) {
         
